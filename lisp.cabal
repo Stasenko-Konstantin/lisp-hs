@@ -19,6 +19,7 @@ common warnings
 library lisp-lib
     hs-source-dirs:    src
     exposed-modules:   Lexer
+                     , Token
     build-depends:     base ^>=4.17.2.1
                      , text
     default-language:  GHC2021
