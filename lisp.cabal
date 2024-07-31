@@ -1,0 +1,38 @@
+cabal-version:      3.0
+name:               lisp
+version:            0.1.0.0
+-- synopsis:
+-- description:
+license:            GPL-3.0-only
+license-file:       LICENSE
+author:             Stasenko-Konstantin
+maintainer:         stasenko.kost@yandex.ru
+-- copyright:
+category:           Language
+build-type:         Simple
+-- extra-doc-files:    CHANGELOG.md
+-- extra-source-files:    
+
+common warnings
+    ghc-options: -Wall -Werror
+
+library lisp-lib
+    hs-source-dirs:    src
+    exposed-modules:   Lexer
+    build-depends:     base ^>=4.17.2.1
+                     , text
+    default-language:  GHC2021
+    default-extensions: OverloadedStrings
+                      , DuplicateRecordFields
+
+executable lisp
+    import:            warnings
+    main-is:           Main.hs
+-- exposed-modules:   
+    build-depends:     base ^>=4.17.2.1
+		     , text
+                     , lisp-lib
+    hs-source-dirs:    app
+    default-language:  GHC2021
+    default-extensions: OverloadedStrings
+                      , DuplicateRecordFields
